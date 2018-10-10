@@ -23,7 +23,12 @@ form_grid_templates = {
 
 class PurchaseOrder(BuyingController):
 	def get_feed(self):
-		return self.supplier_name
+		return self.supplier_name 
+
+	def onload(self):
+		"""Load address and contacts in `__onload`"""
+		load_address_and_contact(self)
+		self.load_dashboard_info()
 
 
 	def __init__(self, *args, **kwargs):
