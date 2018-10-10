@@ -22,6 +22,10 @@ form_grid_templates = {
 }
 
 class PurchaseOrder(BuyingController):
+	def get_feed(self):
+		return self.supplier_name
+
+
 	def __init__(self, *args, **kwargs):
 		super(PurchaseOrder, self).__init__(*args, **kwargs)
 		self.status_updater = [{
